@@ -32,6 +32,11 @@ art, every word real.
 mkdir -p out && MAKEFUN_OUTPUT_DIR=out node main.ts   # writes out/entry.png
 ```
 
+Build note (26 Nov fix session): `main.ts` was re-authored from the kit
+contract alone. It validates the bundled PNG (signature, size, 1024×1024
+IHDR) before writing it, then re-reads the output and verifies its sha256
+against the source. Two runs are byte-identical.
+
 ## Referral
 
 Built with make.fun — referral code `2ym2spy1`.
